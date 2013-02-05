@@ -15,22 +15,23 @@
          android:textSize="25sp"
         android:text="Name" />
 
-    <EditText
-        android:id="@+id/etName"
+    <AutoCompleteTextView
+		android:id="@+id/actvName"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvName"
         android:layout_marginTop="20dp"
-        android:hint="Type an operative Name"
-        android:textSize="25sp"
-        android:ems="10" />
+		android:hint="Type your name in order to display your orders
+or leave it Blanc to get all of them" 
+
+		android:textSize="25sp"/>
 
     <TextView
         android:id="@+id/tvProduct"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"       
-        android:layout_below="@+id/etName"
-        android:layout_marginTop="20dp"
+        android:layout_below="@+id/actvName"
+        android:layout_marginTop="40dp"
          android:textSize="25sp"
         android:text="Product" />
 
@@ -84,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvRow"
         android:hint="Type an operative id"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:textSize="25sp"
         android:inputType="number"
         android:ems="10" />
@@ -99,24 +100,23 @@
         android:text="Get Information" />
 
     <Button
-        android:id="@+id/bEdit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/bGet"
-        android:layout_alignBottom="@+id/bGet"
-        android:layout_toRightOf="@+id/bGet"
-        android:text="Edit Entry"
-        android:textSize="25sp" />
-
-    <Button
         android:id="@+id/bDelete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/bEdit"
         android:layout_alignBottom="@+id/bEdit"
-        android:layout_marginLeft="28dp"
-        android:layout_toRightOf="@+id/bEdit"
+        android:layout_alignParentRight="true"
         android:text="Delete Entry"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/bEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bGet"
+        android:layout_alignBottom="@+id/bGet"
+        android:layout_centerHorizontal="true"
+        android:text="Edit Entry"
         android:textSize="25sp" />
 
 </RelativeLayout>

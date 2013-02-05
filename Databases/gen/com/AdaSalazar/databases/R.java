@@ -18,29 +18,24 @@ public final class R {
         public static final int two=0x7f020004;
     }
     public static final class id {
-        public static final int actvOp=0x7f070001;
-        public static final int bDelete=0x7f07000e;
-        public static final int bEdit=0x7f07000d;
-        public static final int bFindOrder=0x7f070003;
-        public static final int bGet=0x7f07000c;
-        public static final int bUpdateSQL=0x7f070008;
-        public static final int bViewSQL=0x7f070009;
-        public static final int eTOrder=0x7f070002;
-        public static final int etName=0x7f070005;
-        public static final int etProduct=0x7f070007;
-        public static final int etRowId=0x7f07000b;
-        public static final int menu_settings=0x7f070011;
-        public static final int tableRow1=0x7f07000f;
-        public static final int tvName=0x7f070004;
-        public static final int tvOperative=0x7f070000;
-        public static final int tvProduct=0x7f070006;
-        public static final int tvRow=0x7f07000a;
-        public static final int tvSQLinfo=0x7f070010;
+        public static final int actvName=0x7f070001;
+        public static final int bDelete=0x7f070009;
+        public static final int bEdit=0x7f07000a;
+        public static final int bGet=0x7f070008;
+        public static final int bUpdateSQL=0x7f070004;
+        public static final int bViewSQL=0x7f070005;
+        public static final int etProduct=0x7f070003;
+        public static final int etRowId=0x7f070007;
+        public static final int menu_settings=0x7f07000d;
+        public static final int tableRow1=0x7f07000b;
+        public static final int tvName=0x7f070000;
+        public static final int tvProduct=0x7f070002;
+        public static final int tvRow=0x7f070006;
+        public static final int tvSQLinfo=0x7f07000c;
     }
     public static final class layout {
-        public static final int hypertec=0x7f030000;
-        public static final int sqliteexample=0x7f030001;
-        public static final int sqlview=0x7f030002;
+        public static final int sqliteexample=0x7f030000;
+        public static final int sqlview=0x7f030001;
     }
     public static final class menu {
         public static final int activity_databases=0x7f060000;

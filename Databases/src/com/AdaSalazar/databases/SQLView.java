@@ -17,6 +17,17 @@ public class SQLView extends Activity{
 		String data = info.getData();
 		info.close();
 		tv.setText(data);
+		
+		/*
+		 * 		ArrayList<String> datax = info.test();
+		String text = null;
+		for(String value: datax) {
+	        // print the value
+	         text = text + " " + value + " " ;
+	    }
+		info.close();
+		tv.setText(text);
+		 */
 	}
 
 	

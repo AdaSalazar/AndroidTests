@@ -1,4 +1,7 @@
 package com.AdaSalazar.databases;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -13,7 +16,7 @@ public class DbHolder {
 	public static final String KEY_NAME = "operativeName";
 	public static final String KEY_PRODUCTSTYPE = "operativeProdType";
 
-	private static final String DATABASE_NAME= "Hypertect";
+	private static final String DATABASE_NAME= "Hypertec";
 	private static final String DATABASE_TABLE= "WarehouseOperatives";
 	private static final int DATABASE_VERSION= 1;
 	
@@ -132,7 +135,7 @@ public class DbHolder {
 	public void updateEntry(long lRowMod, String modifyName, String modifyProduct) throws SQLException{
 		// TODO Auto-generated method stub
 		ContentValues cvUpdate = new ContentValues();
-		cvUpdate.put(KEY_NAME,modifyName);
+		cvUpdate.put(KEY_NAME, modifyName);
 		cvUpdate.put(KEY_PRODUCTSTYPE, modifyProduct);
 		
 		ourDatabase.update(DATABASE_TABLE, cvUpdate, KEY_ROWID + "=" + lRowMod, null);				
@@ -143,4 +146,19 @@ public class DbHolder {
 		// TODO Auto-generated method stub
 		ourDatabase.delete(DATABASE_TABLE, KEY_ROWID + "=" + lRowDel, null);
 	}
+	
+	public ArrayList<String> getNames()  throws SQLException{
+		String[] columns = new String[]{ KEY_ROWID, KEY_NAME, KEY_PRODUCTSTYPE};
+		Cursor c = ourDatabase.query(DATABASE_TABLE, columns, null, null, null, null, null);
+
+		int iName = c.getColumnIndex(KEY_NAME);
+		ArrayList<String> names = new ArrayList<String>(); 
+		
+		//this will get all the info from the database
+		for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext()){
+			names.add(c.getString(iName)); 
+		}
+		return names;
+	}
+	
 }
