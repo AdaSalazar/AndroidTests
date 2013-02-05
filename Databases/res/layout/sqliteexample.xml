@@ -1,0 +1,122 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DatabasesActivity" 
+    android:background="#BFDCF9">
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+         android:textSize="25sp"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvName"
+        android:layout_marginTop="20dp"
+        android:hint="Type an operative Name"
+        android:textSize="25sp"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/tvProduct"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"       
+        android:layout_below="@+id/etName"
+        android:layout_marginTop="20dp"
+         android:textSize="25sp"
+        android:text="Product" />
+
+    <EditText
+        android:id="@+id/etProduct"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvProduct"
+        android:hint="Type an operative product type"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/bUpdateSQL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bViewSQL"
+        android:layout_alignBottom="@+id/bViewSQL"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="20dp"
+         android:textSize="25sp"
+        android:text="Update SQL" />
+
+    <Button
+        android:id="@+id/bViewSQL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/etProduct"
+        android:layout_marginRight="22dp"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:background="@drawable/custombutons"
+        android:text="View SQL" />
+
+    
+    
+      <TextView
+        android:id="@+id/tvRow"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"       
+        android:layout_below="@+id/bViewSQL"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:text="Enter Row ID" />
+
+    <EditText
+        android:id="@+id/etRowId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvRow"
+        android:hint="Type an operative id"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:inputType="number"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/bGet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etRowId"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:text="Get Information" />
+
+    <Button
+        android:id="@+id/bEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bGet"
+        android:layout_alignBottom="@+id/bGet"
+        android:layout_toRightOf="@+id/bGet"
+        android:text="Edit Entry"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/bDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bEdit"
+        android:layout_alignBottom="@+id/bEdit"
+        android:layout_marginLeft="28dp"
+        android:layout_toRightOf="@+id/bEdit"
+        android:text="Delete Entry"
+        android:textSize="25sp" />
+
+</RelativeLayout>
