@@ -29,8 +29,8 @@ public class DatabasesActivity extends Activity {
 			if (!f.exists()) {
 				f.mkdirs();
 				f.createNewFile();
-				//---copy the db from the assets folder into
-				// the databases folder---
+				/*---copy the db from the assets folder into
+			 	the databases folder---*/
 				CopyDB(getBaseContext().getAssets().open("adadb"),
 				new FileOutputStream(destPath + "/MyDB"));
 			}

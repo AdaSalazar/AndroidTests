@@ -161,4 +161,52 @@ public class DbHolder {
 		return names;
 	}
 	
+	public ArrayList<String> getID()  throws SQLException{
+		String[] columns = new String[]{ KEY_ROWID, KEY_NAME, KEY_PRODUCTSTYPE};
+		Cursor c = ourDatabase.query(DATABASE_TABLE, columns, null, null, null, null, null);
+
+		int iRow = c.getColumnIndex(KEY_ROWID);
+		
+		ArrayList<String> id = new ArrayList<String>(); 
+		//this will get all the info from the database
+		for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext()){
+			id.add(c.getString(iRow)); 
+		}
+		return id;
+	}
+	
+	public ArrayList<String> getProd()  throws SQLException{
+		String[] columns = new String[]{ KEY_ROWID, KEY_NAME, KEY_PRODUCTSTYPE};
+		Cursor c = ourDatabase.query(DATABASE_TABLE, columns, null, null, null, null, null);
+
+		int iProduct = c.getColumnIndex(KEY_PRODUCTSTYPE);
+		
+		ArrayList<String> prod = new ArrayList<String>(); 
+		
+		//this will get all the info from the database
+		for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext()){
+			prod.add(c.getString(iProduct)); 
+		}
+		return prod;
+	}
+	/*public ArrayList<String> getAll()  throws SQLException{
+		String[] columns = new String[]{ KEY_ROWID, KEY_NAME, KEY_PRODUCTSTYPE};
+		Cursor c = ourDatabase.query(DATABASE_TABLE, columns, null, null, null, null, null);
+
+		int iRow = c.getColumnIndex(KEY_ROWID);
+		int iName = c.getColumnIndex(KEY_NAME);
+		int iProduct = c.getColumnIndex(KEY_PRODUCTSTYPE);
+		
+		ArrayList<String> id = new ArrayList<String>(); 
+		ArrayList<String> names = new ArrayList<String>(); 
+		ArrayList<String> prod = new ArrayList<String>(); 
+		
+		//this will get all the info from the database
+		for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext()){
+			id.add(c.getString(iRow)); 
+			names.add(c.getString(iName)); 
+			prod.add(c.getString(iProduct)); 
+		}
+		return names prod id;
+	}*/
 }

@@ -54,7 +54,7 @@ or leave it Blanc to get all of them"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="20dp"
          android:textSize="25sp"
-        android:text="Update SQL" />
+        android:text="Add Entry" />
 
     <Button
         android:id="@+id/bViewSQL"
@@ -65,9 +65,9 @@ or leave it Blanc to get all of them"
         android:layout_marginRight="22dp"
         android:layout_marginTop="20dp"
         android:textSize="25sp"
-        android:background="@drawable/custombutons"
+        
         android:text="View SQL" />
-
+<!-- android:background="@drawable/custombutons" to custom buttons -->
     
     
       <TextView
