@@ -15,47 +15,60 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".listAct"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         <activity
             android:name="com.AdaSalazar.databases.SQLiteExample"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
-               <!--  <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />-->
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity> 
-         
+        </activity>
         <activity
             android:name="com.AdaSalazar.databases.Orders"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
-               <!--  <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.ORDERS" />
 
-                <category android:name="android.intent.category.LAUNCHER" />-->
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity> 
+        </activity>
         <activity
             android:name="com.AdaSalazar.databases.OrdersView"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
-               <!--  <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.ORDERSVIEW" />
 
-                <category android:name="android.intent.category.LAUNCHER" />-->
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity> 
+        </activity>
         <activity
-            android:name=".SQLView"
-            android:label="@string/app_name" >
+            android:name="com.AdaSalazar.databases.SQLView"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.SQLVIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.AdaSalazar.databases.DropDown"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.DROPDOWN" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

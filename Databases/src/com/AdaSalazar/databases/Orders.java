@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,69 +14,105 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Orders extends Activity implements OnClickListener {
 
 	Button sqlUpdate, sqlView, sqlModify, sqlGetInfo, sqlDelete;
-	EditText sqlName, sqlProduct, sqlRow;
+	AutoCompleteTextView order, date, custord, contact, delvierto, deladdress, findOrder;
 	private boolean didItWork = false;
-
-				
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.sqliteexample);
+		setContentView(R.layout.addorders);
 		// Buttons
 		sqlUpdate = (Button) findViewById(R.id.bUpdateSQL);
 		sqlView = (Button) findViewById(R.id.bViewSQL);
 		sqlGetInfo = (Button) findViewById(R.id.bGet);
-		
+
 		sqlModify = (Button) findViewById(R.id.bEdit);
 		sqlDelete = (Button) findViewById(R.id.bDelete);
 
 		// Edit texts
-		sqlName = (EditText) findViewById(R.id.actvName);
-		sqlProduct = (EditText) findViewById(R.id.etProduct);
-		sqlRow = (EditText) findViewById(R.id.etRowId);
+		order = (AutoCompleteTextView) findViewById(R.id.actvorder);
+		date = (AutoCompleteTextView) findViewById(R.id.actvdate);
+		custord = (AutoCompleteTextView) findViewById(R.id.actvcustord);
+		contact = (AutoCompleteTextView) findViewById(R.id.actvcontact);
+		delvierto = (AutoCompleteTextView) findViewById(R.id.actvdeliverto);
+		deladdress = (AutoCompleteTextView) findViewById(R.id.actvdeliveryadd);
+		findOrder = (AutoCompleteTextView) findViewById(R.id.actvorderidupdate);
 
 		sqlView.setOnClickListener(this);
 		sqlUpdate.setOnClickListener(this);
 		sqlGetInfo.setOnClickListener(this);
 		sqlModify.setOnClickListener(this);
 		sqlDelete.setOnClickListener(this);
-		
-		DbHolder autoComplete = new DbHolder(Orders.this);
-		//ALWAYS OPEN AND CLOSE THE HOLDER!!!!!!!!!
+
+		ordersHolder autoComplete = new ordersHolder(Orders.this);
+		// ALWAYS OPEN AND CLOSE THE HOLDER!!!!!!!!!
 		autoComplete.open();
-		ArrayList<String> operativesNames = autoComplete.getNames();
+		ArrayList<String> orders = autoComplete.getOrderIDs();
+		ArrayList<String> dates = autoComplete.getOrderIDs();
+		ArrayList<String> companies = autoComplete.getOrderIDs();
+		ArrayList<String> contacts = autoComplete.getOrderIDs();
+		ArrayList<String> deliveries = autoComplete.getOrderIDs();
+		ArrayList<String> addresses = autoComplete.getOrderIDs();
 		autoComplete.close();
 
-		//this auto completes the form
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-				android.R.layout.simple_dropdown_item_1line, operativesNames);
-				AutoCompleteTextView textView = (AutoCompleteTextView)
-				findViewById(R.id.actvName);
-				textView.setThreshold(2);
-				textView.setAdapter(adapter);
-		}
+		// this auto completes the form
+		ArrayAdapter<String> orderAdapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_dropdown_item_1line, orders);
+		AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.actvorder);
+		textView.setThreshold(2);
+		textView.setAdapter(orderAdapter);
+	}
+
+	/*
+	 * ArrayAdapter<String> dateAdapter = new ArrayAdapter<String>(this,
+	 * android.R.layout.simple_dropdown_item_1line, datesx);
+	 * AutoCompleteTextView tvDate = (AutoCompleteTextView)
+	 * findViewById(R.id.actvdate); tvDate.setThreshold(2);
+	 * tvDate.setAdapter(dateAdapter); } ArrayAdapter<String> adapter = new
+	 * ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,
+	 * orders); AutoCompleteTextView textView = (AutoCompleteTextView)
+	 * findViewById(R.id.actvorder); textView.setThreshold(2);
+	 * textView.setAdapter(adapter); } ArrayAdapter<String> adapter = new
+	 * ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,
+	 * orders); AutoCompleteTextView textView = (AutoCompleteTextView)
+	 * findViewById(R.id.actvorder); textView.setThreshold(2);
+	 * textView.setAdapter(adapter); } ArrayAdapter<String> adapter = new
+	 * ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,
+	 * orders); AutoCompleteTextView textView = (AutoCompleteTextView)
+	 * findViewById(R.id.actvorder); textView.setThreshold(2);
+	 * textView.setAdapter(adapter); } ArrayAdapter<String> adapter = new
+	 * ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,
+	 * orders); AutoCompleteTextView textView = (AutoCompleteTextView)
+	 * findViewById(R.id.actvorder); textView.setThreshold(2);
+	 * textView.setAdapter(adapter); }
+	 */
 
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
 
 		switch (arg0.getId()) {
-		
+
 		case R.id.bUpdateSQL:
-			String name = sqlName.getText().toString();
-			String product = sqlProduct.getText().toString();
+			String orderStr = order.getText().toString();
+			String dateStr = date.getText().toString();
+			String custordStr = custord.getText().toString();
+			String contactStr = contact.getText().toString();
+			String delivertoStr = delvierto.getText().toString();
+			String deladdressStr = deladdress.getText().toString();
 
 			didItWork = true;
 			try {
-				DbHolder entry = new DbHolder(Orders.this);
+				ordersHolder entry = new ordersHolder(Orders.this);
 				entry.open();
-				entry.createEntry(name, product);
+				entry.createOrder(orderStr, dateStr, custordStr, contactStr,
+						delivertoStr, deladdressStr);
 				entry.close();
 
 			} catch (Exception e) {
@@ -97,27 +134,38 @@ public class Orders extends Activity implements OnClickListener {
 				}
 			}
 			break;
-			
+
 		case R.id.bViewSQL:
-			Intent i = new Intent("android.intent.action.SQLVIEW");
+			Intent i = new Intent("android.intent.action.ORDERSVIEW");
 			startActivity(i);
 			break;
 
 		case R.id.bGet:
 			try {
-				String sRowGet = sqlRow.getText().toString();
-				// converts the text into a long (number) variable
-				long lRowGet = Long.parseLong(sRowGet);
+				String getO = findOrder.getText().toString();
 				
-				DbHolder dbH = new DbHolder(this);
+				/*
+				 * To test Stuff
+				Toast toast = Toast.makeText(getApplicationContext(), "TextToShow", Toast.LENGTH_SHORT);
+				toast.show();
+				*/			
+				ordersHolder dbH = new ordersHolder(this);
 				dbH.open();
-				String returnedName = dbH.getName(lRowGet);
-				String returnedProdType = dbH.getProdType(lRowGet);
+				String returnedID = dbH.getOrderID(getO);
+				String returnedDate = dbH.getDate(getO);
+				String returnedCust = dbH.getCustomer(getO);
+				String returnedCont = dbH.getContact(getO);
+				String returnedComp = dbH.getCompany(getO);
+				String returnedAddr = dbH.getAddress(getO);
 				dbH.close();
 
-				sqlName.setText(returnedName);
-				sqlProduct.setText(returnedProdType);
-			
+				order.setText(returnedID);
+				date.setText(returnedDate);
+				custord.setText(returnedCust);
+				contact.setText(returnedCont);
+				delvierto.setText(returnedComp);
+				deladdress.setText(returnedAddr);
+
 			} catch (Exception e) {
 				String error = e.toString();
 				Dialog d = new Dialog(this);
@@ -126,25 +174,27 @@ public class Orders extends Activity implements OnClickListener {
 				tv.setText(error);
 				d.setContentView(tv);
 				d.show();
-			} 
+			}
 			break;
 
 		case R.id.bEdit:
 			didItWork = true;
 			try {
-				String modifyName = sqlName.getText().toString();
-				String modifyProduct = sqlProduct.getText().toString();
-				String sRowMod = sqlRow.getText().toString();
-				// converts the text into a long (number) variable
-				long lRowMod = Long.parseLong(sRowMod);
+				String modID = order.getText().toString();
+				String modDate = date.getText().toString();
+				String modCust = custord.getText().toString();
+				String modCont = contact.getText().toString();
+				String modComp = delvierto.getText().toString();
+				String modAddr = deladdress.getText().toString();
 
-				DbHolder editDb = new DbHolder(this);
+				ordersHolder editDb = new ordersHolder(this);
 				editDb.open();
-				editDb.updateEntry(lRowMod, modifyName, modifyProduct);
+				editDb.updateOrder(modID, modDate, modCust, modCont, modComp,
+						modAddr);
 				editDb.close();
-				
+
 			} catch (Exception e) {
-				
+
 				String error = e.toString();
 				Dialog d = new Dialog(this);
 				d.setTitle("Error while updating data!");
@@ -168,12 +218,10 @@ public class Orders extends Activity implements OnClickListener {
 		case R.id.bDelete:
 			didItWork = true;
 			try {
-				String sRowDel = sqlRow.getText().toString();
-				// converts the text into a long (number) variable
-				long lRowDel = Long.parseLong(sRowDel);
-				DbHolder delRDb = new DbHolder(this);
+				String delID = order.getText().toString();
+				ordersHolder delRDb = new ordersHolder(this);
 				delRDb.open();
-				delRDb.deleteEntry(lRowDel);
+				delRDb.deleteOrder(delID);
 				delRDb.close();
 			} catch (Exception e) {
 				String error = e.toString();

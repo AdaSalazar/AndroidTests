@@ -29,9 +29,12 @@ public class OrdersView extends Activity{
 		
 		 **/
 		//This is the ListView element obtained by id from the xml layout
-		ListView lvids = (ListView)findViewById(R.id.lvIds); 		
-		ListView lvNames = (ListView)findViewById(R.id.lvNames); 
-		ListView lvprods = (ListView)findViewById(R.id.lvProducts); 
+		ListView lvOrd = (ListView)findViewById(R.id.lvOrder); 		
+		ListView lvDate = (ListView)findViewById(R.id.lvDate); 
+		ListView lvCust = (ListView)findViewById(R.id.lvCustomer); 
+		ListView lvCont = (ListView)findViewById(R.id.lvContact); 
+		ListView lvDeli = (ListView)findViewById(R.id.lvDeliver); 		
+		ListView lvAddr = (ListView)findViewById(R.id.lvDelivery); 
 
 		//ListView lvInfo = (ListView)findViewById(R.id.AllInfo); 
 		
@@ -39,21 +42,30 @@ public class OrdersView extends Activity{
 		ArrayAdapter<String> arrAdap;
 		
 		info.open();
-		ArrayList<String> idsArr = info.getID();
-		ArrayList<String> namesArr = info.getNames();
-		ArrayList<String> prodsArr = info.getProd();
+		ArrayList<String> orders = info.getOrderIDs();
+		ArrayList<String> dates = info.getDates();
+		ArrayList<String> customers = info.getCustomers();
+		ArrayList<String> contacts = info.getContacts();
+		ArrayList<String> companies = info.getCompanies();
+		ArrayList<String> deliveries = info.getAddresses();
 		
 		//ArrayList<String> allArr = info.getAll();
 		
 		//in here is binding a strings array to the simple_list_item_1 which is built in view (view is things you see on the screen)
-		arrAdap = new ArrayAdapter<String>(OrdersView.this, android.R.layout.simple_list_item_1, idsArr);
+		arrAdap = new ArrayAdapter<String>(OrdersView.this, android.R.layout.simple_list_item_1, orders);
 		//here we set the array adapter (it turns it on)
-		lvids.setAdapter(arrAdap);
+		lvOrd.setAdapter(arrAdap);
 		
-		arrAdap = new ArrayAdapter<String>(OrdersView.this, android.R.layout.simple_list_item_1, namesArr);
-		lvNames.setAdapter(arrAdap);
-		arrAdap = new ArrayAdapter<String>(OrdersView.this, android.R.layout.simple_list_item_1, prodsArr);
-		lvprods.setAdapter(arrAdap);
+		arrAdap = new ArrayAdapter<String>(OrdersView.this, android.R.layout.simple_list_item_1, dates);
+		lvDate.setAdapter(arrAdap);
+		arrAdap = new ArrayAdapter<String>(OrdersView.this, android.R.layout.simple_list_item_1, customers);
+		lvCust.setAdapter(arrAdap);
+		arrAdap = new ArrayAdapter<String>(OrdersView.this, android.R.layout.simple_list_item_1, contacts);
+		lvCont.setAdapter(arrAdap);
+		arrAdap = new ArrayAdapter<String>(OrdersView.this, android.R.layout.simple_list_item_1, companies);
+		lvDeli.setAdapter(arrAdap);
+		arrAdap = new ArrayAdapter<String>(OrdersView.this, android.R.layout.simple_list_item_1, deliveries);
+		lvAddr.setAdapter(arrAdap);
 		
 		
 

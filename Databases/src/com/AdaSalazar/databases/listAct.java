@@ -10,7 +10,7 @@ import android.widget.ListView;
 public class listAct extends ListActivity {
 	
 	/**/
-	String classes[] = {"SQLiteExample","Orders","OrdersView","ListViewTest","example4","example5"};
+	String classes[] = {"DropDown","Orders","","","",""};
 	
 	
 	@Override

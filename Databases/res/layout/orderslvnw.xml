@@ -22,9 +22,9 @@
             android:textSize="25sp" />
 
         <ListView
-            android:id="@+id/lvOrder"
+            android:id="@+id/lvIds"
             android:layout_width="100dp"
-            android:layout_height="400dp"
+            android:layout_height="600dp"
             android:background="#FF99FF"
             android:textSize="20sp" >
         </ListView>
@@ -47,9 +47,9 @@
             android:textSize="25sp" />
 
         <ListView
-            android:id="@+id/lvDate"
+            android:id="@+id/lvNames"
             android:layout_width="100dp"
-            android:layout_height="400dp"
+            android:layout_height="600dp"
             android:background="#CCCCFF"
             android:textSize="20sp" />
     </LinearLayout>
@@ -71,9 +71,9 @@
             android:textSize="25sp" />
 
         <ListView
-            android:id="@+id/lvCustomer"
+            android:id="@+id/lvProducts"
             android:layout_width="100dp"
-            android:layout_height="400dp"
+            android:layout_height="600dp"
             android:background="#CC33FF"
             android:textSize="20sp" />
     </LinearLayout>
@@ -96,7 +96,7 @@
         <ListView
             android:id="@+id/lvContact"
             android:layout_width="100dp"
-            android:layout_height="400dp"
+            android:layout_height="600dp"
             android:background="#FF33CC"
             android:textSize="20sp" />
     </LinearLayout>
@@ -120,7 +120,7 @@
         <ListView
             android:id="@+id/lvDeliver"
             android:layout_width="118dp"
-            android:layout_height="400dp"
+            android:layout_height="600dp"
             android:background="#99CCFF"
             android:textSize="20sp" />
     </LinearLayout>
@@ -142,9 +142,9 @@
             android:textSize="25sp" />
 
         <ListView
-            android:id="@+id/lvDelivery"
+            android:id="@+id/lvDeliveryA"
             android:layout_width="120dp"
-            android:layout_height="400dp"
+            android:layout_height="600dp"
             android:background="#CC6666"
             android:textSize="20sp" >
         </ListView>

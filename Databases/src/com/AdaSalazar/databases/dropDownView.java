@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class SQLView extends Activity{
+public class dropDownView extends Activity{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -12,7 +12,7 @@ public class SQLView extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.sqlview);
 		TextView tv = (TextView) findViewById(R.id.tvSQLinfo);
-		ordersHolder info = new ordersHolder(this);
+		DbHolder info = new DbHolder(this);
 		info.open();
 		String data = info.getData();
 		info.close();
