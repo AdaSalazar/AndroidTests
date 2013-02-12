@@ -10,12 +10,12 @@ import android.widget.ListView;
 public class listAct extends ListActivity {
 	
 	/**/
-	String classes[] = {"DropDown","Orders","","","",""};
+	String classes[] = {"Warehouse","Orders","ListView"};
 	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub  ,"","","",""
 		super.onCreate(savedInstanceState);	
 									//context is the class, int is a single list item within our list, then the array
 		setListAdapter(new ArrayAdapter<String>(listAct.this, android.R.layout.simple_list_item_1, classes));

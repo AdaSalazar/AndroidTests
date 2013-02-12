@@ -119,8 +119,8 @@ public class ordersHolder {
 
 		// this will get all the info from the database
 		for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext()) {
-			result = result + c.getString(iRow) + " " + c.getString(iName)
-					+ " " + c.getString(iProduct) + "\n";
+			result = result + c.getString(iRow) + " \t\t\t" + c.getString(iName)
+					+ " \t\t\t" + c.getString(iProduct) + "\n";
 		}
 
 		return result;
@@ -272,11 +272,12 @@ public class ordersHolder {
 
 	public String getOrderID(String searchOrder) throws SQLException {
 		// TODO Auto-generated method stub
-		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE, CUSTOMER_ORDER,
-				ORDER_CONTACT, ORDER_DELIVERYADD, ORDER_DELCOMPANY };
-		Cursor c = ourDatabase.query(ORDERS_TABLE, columns, ORDER_ID + "="
-				+ searchOrder, null, null, null, null);
-		
+		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE,
+				CUSTOMER_ORDER, ORDER_CONTACT, ORDER_DELCOMPANY,
+				ORDER_DELIVERYADD };
+		Cursor c = ourDatabase.query(ORDERS_TABLE, columns, ORDER_ID
+				+ " LIKE '" + searchOrder + "'", null, null, null, null);
+
 		if (c != null) {
 			c.moveToFirst();
 			String order = c.getString(2);
@@ -284,15 +285,15 @@ public class ordersHolder {
 		}
 		return null;
 	}
-	
 
 	public String getDate(String searchOrder) throws SQLException {
 		// TODO Auto-generated method stub
-		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE, CUSTOMER_ORDER,
-				ORDER_CONTACT, ORDER_DELIVERYADD, ORDER_DELCOMPANY };
+		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE,
+				CUSTOMER_ORDER, ORDER_CONTACT, ORDER_DELCOMPANY,
+				ORDER_DELIVERYADD };
 		Cursor c = ourDatabase.query(ORDERS_TABLE, columns, ORDER_ID + "="
 				+ searchOrder, null, null, null, null);
-		
+
 		if (c != null) {
 			c.moveToFirst();
 			String order = c.getString(3);
@@ -301,14 +302,14 @@ public class ordersHolder {
 		return null;
 	}
 
-
 	public String getCustomer(String searchOrder) throws SQLException {
 		// TODO Auto-generated method stub
-		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE, CUSTOMER_ORDER,
-				ORDER_CONTACT, ORDER_DELIVERYADD, ORDER_DELCOMPANY };
+		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE,
+				CUSTOMER_ORDER, ORDER_CONTACT, ORDER_DELCOMPANY,
+				ORDER_DELIVERYADD };
 		Cursor c = ourDatabase.query(ORDERS_TABLE, columns, ORDER_ID + "="
 				+ searchOrder, null, null, null, null);
-		
+
 		if (c != null) {
 			c.moveToFirst();
 			String order = c.getString(4);
@@ -316,15 +317,15 @@ public class ordersHolder {
 		}
 		return null;
 	}
-	
 
 	public String getContact(String searchOrder) throws SQLException {
 		// TODO Auto-generated method stub
-		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE, CUSTOMER_ORDER,
-				ORDER_CONTACT, ORDER_DELIVERYADD, ORDER_DELCOMPANY };
+		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE,
+				CUSTOMER_ORDER, ORDER_CONTACT, ORDER_DELCOMPANY,
+				ORDER_DELIVERYADD };
 		Cursor c = ourDatabase.query(ORDERS_TABLE, columns, ORDER_ID + "="
 				+ searchOrder, null, null, null, null);
-		
+
 		if (c != null) {
 			c.moveToFirst();
 			String order = c.getString(5);
@@ -332,15 +333,15 @@ public class ordersHolder {
 		}
 		return null;
 	}
-	
 
 	public String getAddress(String searchOrder) throws SQLException {
 		// TODO Auto-generated method stub
-		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE, CUSTOMER_ORDER,
-				ORDER_CONTACT, ORDER_DELIVERYADD, ORDER_DELCOMPANY };
+		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE,
+				CUSTOMER_ORDER, ORDER_CONTACT, ORDER_DELCOMPANY,
+				ORDER_DELIVERYADD };
 		Cursor c = ourDatabase.query(ORDERS_TABLE, columns, ORDER_ID + "="
 				+ searchOrder, null, null, null, null);
-		
+
 		if (c != null) {
 			c.moveToFirst();
 			String order = c.getString(6);
@@ -348,16 +349,15 @@ public class ordersHolder {
 		}
 		return null;
 	}
-	
-	
 
 	public String getCompany(String searchOrder) throws SQLException {
 		// TODO Auto-generated method stub
-		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE, CUSTOMER_ORDER,
-				ORDER_CONTACT, ORDER_DELIVERYADD, ORDER_DELCOMPANY };
+		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE,
+				CUSTOMER_ORDER, ORDER_CONTACT, ORDER_DELCOMPANY,
+				ORDER_DELIVERYADD };
 		Cursor c = ourDatabase.query(ORDERS_TABLE, columns, ORDER_ID + "="
 				+ searchOrder, null, null, null, null);
-		
+
 		if (c != null) {
 			c.moveToFirst();
 			String order = c.getString(7);
@@ -365,10 +365,11 @@ public class ordersHolder {
 		}
 		return null;
 	}
-	
+
 	public ArrayList<String> getOrdersInfo() throws SQLException {
-		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE, CUSTOMER_ORDER,
-				ORDER_CONTACT, ORDER_DELIVERYADD, ORDER_DELCOMPANY };
+		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE,
+				CUSTOMER_ORDER, ORDER_CONTACT, ORDER_DELIVERYADD,
+				ORDER_DELCOMPANY };
 		Cursor c = ourDatabase.query(ORDERS_TABLE, columns, null, null, null,
 				null, null);
 
@@ -393,8 +394,9 @@ public class ordersHolder {
 	}
 
 	public ArrayList<String> getOrderIDs() throws SQLException {
-		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE, CUSTOMER_ORDER,
-				ORDER_CONTACT, ORDER_DELIVERYADD, ORDER_DELCOMPANY };
+		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE,
+				CUSTOMER_ORDER, ORDER_CONTACT, ORDER_DELCOMPANY,
+				ORDER_DELIVERYADD };
 		Cursor c = ourDatabase.query(ORDERS_TABLE, columns, null, null, null,
 				null, null);
 
@@ -410,8 +412,9 @@ public class ordersHolder {
 	}
 
 	public ArrayList<String> getDates() throws SQLException {
-		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE, CUSTOMER_ORDER,
-				ORDER_CONTACT, ORDER_DELIVERYADD, ORDER_DELCOMPANY };
+		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE,
+				CUSTOMER_ORDER, ORDER_CONTACT, ORDER_DELCOMPANY,
+				ORDER_DELIVERYADD };
 		Cursor c = ourDatabase.query(ORDERS_TABLE, columns, null, null, null,
 				null, null);
 
@@ -427,8 +430,9 @@ public class ordersHolder {
 	}
 
 	public ArrayList<String> getCustomers() throws SQLException {
-		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE, CUSTOMER_ORDER,
-				ORDER_CONTACT, ORDER_DELIVERYADD, ORDER_DELCOMPANY };
+		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE,
+				CUSTOMER_ORDER, ORDER_CONTACT, ORDER_DELCOMPANY,
+				ORDER_DELIVERYADD };
 		Cursor c = ourDatabase.query(ORDERS_TABLE, columns, null, null, null,
 				null, null);
 
@@ -444,8 +448,9 @@ public class ordersHolder {
 	}
 
 	public ArrayList<String> getContacts() throws SQLException {
-		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE, CUSTOMER_ORDER,
-				ORDER_CONTACT, ORDER_DELIVERYADD, ORDER_DELCOMPANY };
+		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE,
+				CUSTOMER_ORDER, ORDER_CONTACT, ORDER_DELCOMPANY,
+				ORDER_DELIVERYADD };
 		Cursor c = ourDatabase.query(ORDERS_TABLE, columns, null, null, null,
 				null, null);
 
@@ -461,8 +466,9 @@ public class ordersHolder {
 	}
 
 	public ArrayList<String> getAddresses() throws SQLException {
-		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE, CUSTOMER_ORDER,
-				ORDER_CONTACT, ORDER_DELIVERYADD, ORDER_DELCOMPANY };
+		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE,
+				CUSTOMER_ORDER, ORDER_CONTACT, ORDER_DELCOMPANY,
+				ORDER_DELIVERYADD };
 		Cursor c = ourDatabase.query(ORDERS_TABLE, columns, null, null, null,
 				null, null);
 
@@ -478,8 +484,9 @@ public class ordersHolder {
 	}
 
 	public ArrayList<String> getCompanies() throws SQLException {
-		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE, CUSTOMER_ORDER,
-				ORDER_CONTACT, ORDER_DELIVERYADD, ORDER_DELCOMPANY };
+		String[] columns = new String[] { ORDER_ROWID, ORDER_ID, ORDER_DATE,
+				CUSTOMER_ORDER, ORDER_CONTACT, ORDER_DELCOMPANY,
+				ORDER_DELIVERYADD };
 		Cursor c = ourDatabase.query(ORDERS_TABLE, columns, null, null, null,
 				null, null);
 

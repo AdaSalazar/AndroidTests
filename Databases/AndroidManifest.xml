@@ -64,7 +64,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.AdaSalazar.databases.DropDown"
+            android:name="com.AdaSalazar.databases.Warehouse"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
