@@ -1,97 +1,53 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".HypertecMainA" >
 
-    
-   <!--<RadioGroup
-        android:id="@+id/rGWarehouseOperative"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-
-        <RadioButton
-            android:id="@+id/rAll"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:textSize="20sp"
-            android:text="@string/rOpAny" />
-
-        <RadioButton
-            android:id="@+id/rOp1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textSize="20sp"
-            android:text="@string/rOp1" />
-
-        <RadioButton
-            android:id="@+id/rOp2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textSize="20sp"
-            android:text="@string/rOp2" />
-
-        <RadioButton
-            android:id="@+id/rOp3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textSize="20sp"
-            android:text="@string/rOp3" />
-        
-        <RadioButton
-            android:id="@+id/rOp4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:textSize="20sp"
-            android:text="@string/rOp4" />
-    </RadioGroup>
-      
-      android:layout_below="@+id/rGWarehouseOperative"
-      --> 
     <TextView
         android:id="@+id/tvOperative"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:text="Operative Name"
-		android:textSize="25sp"
-	/>
-	    
-	<AutoCompleteTextView
-		android:id="@+id/actvOp"
-		android:layout_marginTop="45dp"
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:hint="Type your name in order to display your orders
-		or leave it blank to get all of them" />
-    
-    
-    <EditText
-        android:id="@+id/eTOrder"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_below="@+id/actvOp"
-        android:layout_marginTop="25dp"
+        android:text="Operative Name"
+        android:textSize="30sp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvOpName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:hint="Please type the name of warehouse operative or type &apos;All&apos; for all orders"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tvOrder"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Order Number"
+        android:textSize="30sp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvOrder"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:textSize="20sp"
-         />
+        android:hint="Please type the order number"
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/bFindOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/eTOrder"
-        android:layout_marginRight="48dp"
-        android:layout_marginTop="25dp"
-        android:textSize="20sp"
-        android:text="FindOrder" />
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="400dp"
+        android:text="Find Order"
+        android:textSize="35sp" />
 
-    
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        layout="@layout/lvwithtv" />
 
-</RelativeLayout>
+</LinearLayout>

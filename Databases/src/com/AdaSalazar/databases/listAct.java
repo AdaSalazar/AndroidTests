@@ -10,7 +10,7 @@ import android.widget.ListView;
 public class listAct extends ListActivity {
 	
 	/**/
-	String classes[] = {"Warehouse","Orders","ListView"};
+	String classes[] = {"Warehouse","Orders","ListViewsWithTextsViews","ListViewPhp"};
 	
 	
 	@Override

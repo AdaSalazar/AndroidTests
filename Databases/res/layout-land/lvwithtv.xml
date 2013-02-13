@@ -12,8 +12,8 @@
 
         <TextView
             android:id="@+id/tvOrder"
-            android:layout_width="105dp"
-            android:layout_height="50dp"
+            android:layout_width="135dp"
+            android:layout_height="70dp"
             android:layout_marginTop="10dp"
             android:background="#FF99FF"
             android:text="Order\n"
@@ -21,8 +21,8 @@
 
         <TextView
             android:id="@+id/tvDate"
-            android:layout_width="128dp"
-            android:layout_height="50dp"
+            android:layout_width="155dp"
+            android:layout_height="70dp"
             android:layout_marginTop="10dp"
             android:background="#CCCCFF"
             android:text="Date\n"
@@ -30,8 +30,8 @@
 
         <TextView
             android:id="@+id/tvCustomer"
-            android:layout_width="105dp"
-            android:layout_height="wrap_content"
+            android:layout_width="135dp"
+            android:layout_height="70dp"
             android:layout_marginTop="10dp"
             android:background="#CC33FF"
             android:text="Customer\nOrder"
@@ -39,30 +39,30 @@
 
         <TextView
             android:id="@+id/tvContact"
-            android:layout_width="85dp"
-            android:layout_height="50dp"
+            android:layout_width="145dp"
+           android:layout_height="70dp"
             android:layout_marginTop="10dp"
             android:background="#FF33CC"
             android:text="Contact\n"
-            android:textSize="25sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/tvCompany"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="235dp"
+            android:layout_height="70dp"
             android:layout_marginTop="10dp"
             android:background="#99CCFF"
             android:text="Deliver\nTo"
-            android:textSize="25sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/tvAddress"
-            android:layout_width="113dp"
-            android:layout_height="50dp"
+            android:layout_width="258dp"
+            android:layout_height="70dp"
             android:layout_marginTop="10dp"
             android:background="#CC6666"
             android:text="Delivery\nAddress"
-            android:textSize="25sp" />
+            android:textSize="30sp" />
     </LinearLayout>
 
     <ListView

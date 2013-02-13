@@ -16,6 +16,7 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,10 +61,14 @@ public class ListViewsWithTextsViews extends Activity{
 			
 			//http post
 			try{
+				//this fixes the android.os.NetworkOnMainThreadException
+				StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+				StrictMode.setThreadPolicy(policy); 
+				
 				//this is called http lifting
 				HttpClient httpclientV = new DefaultHttpClient(); //create a client object
-				//HttpPost httpposting= new HttpPost("http://www.abisalazar.com/as/hypertest/index.php");//post to our url (we coluld also use get)
-				HttpPost httpposting= new HttpPost("localhost/hyperapp/index.php");//post to our url (we coluld also use get)
+				HttpPost httpposting= new HttpPost("http://abisalazar.com/as/hyperapp/index.php");//post to our url (we coluld also use get)
+				//HttpPost httpposting= new HttpPost("http://localhost/hyperapp/index.php");//post to our url (we coluld also use get)
 				//execute the post and get response object
 				HttpResponse responseV = httpclientV.execute(httpposting);
 				//get the message from the response variable
@@ -72,7 +77,7 @@ public class ListViewsWithTextsViews extends Activity{
 				InputStream websV = entityV.getContent();				
 				//convert responseV to string
 				try{
-					BufferedReader buffReader = new BufferedReader(new InputStreamReader(websV,"iso-8859-l"),8);
+					BufferedReader buffReader = new BufferedReader(new InputStreamReader(websV,"ISO-8859-1"),8);
 					StringBuilder strBuilder = new StringBuilder();
 					String lineV = null;
 					
@@ -89,6 +94,9 @@ public class ListViewsWithTextsViews extends Activity{
 				
 			}catch (Exception e){
 					Log.e("log_tag", "Error in http connection "+e.toString());
+					Log.e("ERROR", "Error in CONNECTION THE code: "+ e.toString());
+					//this prints out the location in the code where the error occurred
+					e.printStackTrace();
 			}
 			
 			//We have to parse the json data
@@ -101,7 +109,7 @@ public class ListViewsWithTextsViews extends Activity{
 					//create a new order object
 					Order resultRowO = new Order();
 					//set that order's attributes
-					resultRowO.orderRowID = jsonData.getString("orderRowID");
+					resultRowO.orderRowID = jsonData.getString("OrderRowID");
 					resultRowO.OrderID = jsonData.getString("OrderID");
 					resultRowO.OrderDate = jsonData.getString("OrderDate");
 					resultRowO.CustOrd = jsonData.getString("CustOrd");

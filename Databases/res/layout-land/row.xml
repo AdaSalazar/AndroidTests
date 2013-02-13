@@ -6,44 +6,44 @@
 
     <TextView
         android:id="@+id/tvOrder"
-        android:layout_width="105dp"
+        android:layout_width="135dp"
         android:layout_height="50dp"
         android:background="#FF99FF"
         android:textSize="27sp" />
 
     <TextView
         android:id="@+id/tvDate"
-        android:layout_width="128dp"
+        android:layout_width="155dp"
         android:layout_height="50dp"
         android:background="#CCCCFF"
         android:textSize="27sp" />
 
     <TextView
         android:id="@+id/tvCustomer"
-        android:layout_width="105dp"
+        android:layout_width="135dp"
         android:layout_height="50dp"
         android:background="#CC33FF"
         android:textSize="27sp" />
 
     <TextView
         android:id="@+id/tvContact"
-        android:layout_width="85dp"
+        android:layout_width="145dp"
         android:layout_height="50dp"
         android:background="#FF33CC"
-        android:textSize="27sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/tvCompany"
-        android:layout_width="100dp"
+        android:layout_width="235dp"
         android:layout_height="50dp"
         android:background="#99CCFF"
-        android:textSize="27sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/tvAddress"
-        android:layout_width="113dp"
+        android:layout_width="258dp"
         android:layout_height="50dp"
         android:background="#CC6666"
-        android:textSize="27sp" />
+        android:textSize="20sp" />
 
 </LinearLayout>

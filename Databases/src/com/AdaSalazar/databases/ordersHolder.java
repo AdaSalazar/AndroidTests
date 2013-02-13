@@ -55,13 +55,13 @@ public class ordersHolder {
 
 			/* Orders Table */
 			db.execSQL("CREATE TABLE " + ORDERS_TABLE + " (" + ORDER_ROWID
-					+ "  INTEGER PRIMARY KEY AUTOINCREMENT, " + ORDER_ID
-					+ " varchar(7) NOT NULL , " + ORDER_DATE
-					+ " varchar(9) NOT NULL , " + CUSTOMER_ORDER
-					+ " varchar(7) NOT NULL , " + ORDER_CONTACT
-					+ " varchar(25) NOT NULL , " + ORDER_DELCOMPANY
-					+ " varchar(25) NOT NULL , " + ORDER_DELIVERYADD
-					+ " varchar(45) NOT NULL); ");
+					+ "  INTEGER PRIMARY KEY AUTOINCREMENT, " 
+					+ ORDER_ID	+ " varchar(7) NOT NULL , " 
+					+ ORDER_DATE + " varchar(9) NOT NULL , " 
+					+ CUSTOMER_ORDER + " varchar(7) NOT NULL , " 
+					+ ORDER_CONTACT + " varchar(25) NOT NULL , " 
+					+ ORDER_DELCOMPANY + " varchar(25) NOT NULL , " 
+					+ ORDER_DELIVERYADD + " varchar(45) NOT NULL); ");
 			/*
 			 * db.execSQL("CREATE TABLE WarehouseOperatives (" +
 			 * " operativeID int PRIMARY KEY AUTO_INCREMENT, "+
