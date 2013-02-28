@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">HypertecApp</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="eTOrderHint">Enter a HEL reference/Partcode or Leave blank for all current Hypertec South backorders</string>
+    <string name="bFindOrder">Find Order</string>
+    <string name="tvOpLabel">Please type the name of warehouse operative or type "All" for all orders</string>
+    <string name="rOp1">Warehouse Operative Name 1</string>
+    <string name="rOp2">Warehouse Operative Name 2</string>
+    <string name="rOp3">Warehouse Operative Name 3</string>
+    <string name="rOp4">Warehouse Operative Name 4</string>
+
+</resources>

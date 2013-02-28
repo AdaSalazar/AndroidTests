@@ -1,0 +1,196 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BFDCF9"
+    tools:context=".DatabasesActivity" >
+
+    <TextView
+        android:id="@+id/tvorder"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Order"
+        android:textSize="25sp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvorder"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvorder"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="105dp"
+        android:ems="10"
+        android:hint="WA46495"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tvdate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvorder"
+        android:layout_marginTop="20dp"
+        android:text="Date"
+        android:textSize="25sp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvdate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvdate"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="20dp"
+        android:hint="07/02/2012"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tvcustord"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvdate"
+        android:layout_marginTop="20dp"
+        android:text="Customer\nOrder"
+        android:textSize="25sp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvcustord"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvcustord"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="20dp"
+        android:hint="WA12345"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tvcontact"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvcustord"
+        android:layout_marginTop="20dp"
+        android:text="Contact"
+        android:textSize="25sp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvcontact"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvcontact"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="20dp"
+        android:hint="Name Lastname"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tvdeliverto"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvcontact"
+        android:layout_marginTop="20dp"
+        android:text="Deliver To"
+        android:textSize="25sp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvdeliverto"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvdeliverto"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="20dp"
+        android:hint="Company name"
+        android:textSize="25sp" />
+    
+    <TextView
+        android:id="@+id/tvdeliveryadd"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/actvdeliverto"
+        android:layout_marginTop="20dp"
+        android:text="Delivery\nAddresss"
+        android:textSize="25sp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvdeliveryadd"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvdeliveryadd"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="105dp"
+        android:layout_marginTop="20dp"
+        android:hint="Address"
+        android:textSize="25sp" />
+    
+    <Button
+        android:id="@+id/bUpdateSQL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvdeliveryadd"
+        android:layout_marginTop="20dp"
+        android:text="Add Entry"
+        android:textSize="25sp" />
+    <!-- android:background="@drawable/custombutons" to custom buttons -->
+
+    <Button
+        android:id="@+id/bViewSQL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bUpdateSQL"
+        android:layout_alignBottom="@+id/bUpdateSQL"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="27dp"
+        android:text="View"
+        android:textSize="25sp" />
+    
+     <TextView
+        android:id="@+id/tvorderidupdate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bViewSQL"
+        android:layout_marginTop="20dp"
+        android:text="Enter Order ID"
+        android:textSize="25sp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvorderidupdate"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvorderidupdate"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="155dp"
+        android:layout_marginTop="20dp"
+        android:hint="update"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/bDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bGet"
+        android:text="Delete Entry"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/bEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bDelete"
+        android:layout_alignBottom="@+id/bDelete"
+        android:layout_alignParentRight="true"
+        android:text="Edit Entry"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/bGet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvorderidupdate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="Get Order Information"
+        android:textSize="25sp" />
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HypertecMainA" >
+
+    <TextView
+        android:id="@+id/tvOperative"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvOpLabel"
+        android:textSize="25sp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvOpName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:textSize="35sp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actvOrder"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:hint="@string/eTOrderHint"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/bFindOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/actvOrder"
+        android:layout_marginRight="48dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/bFindOrder"
+        android:textSize="20sp" />
+
+</RelativeLayout>
